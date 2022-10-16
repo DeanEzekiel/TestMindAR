@@ -5,7 +5,7 @@
   <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image.prod.js"></script>
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image-aframe.prod.js"></script>
-  <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+  
   <script>
   document.addEventListener("DOMContentLoaded", function() {
     // TARGET EVENTS
@@ -26,7 +26,7 @@
   function unmute(){
     var vid = document.querySelector("#vid");
     vid.muted = false;
-    $("#container").css("display","none");
+    document.querySelector("#container").css("display","none");
   }
   </script>
 
