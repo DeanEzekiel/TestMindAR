@@ -5,6 +5,19 @@
   <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image.prod.js"></script>
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image-aframe.prod.js"></script>
+
+  <script>
+    const exampleTarget = document.querySelector('#img-target');
+    var vid = document.querySelector("#vid");
+exampleTarget.addEventListener("targetFound", event => {
+  vid.play();
+});
+
+// detect target lost
+exampleTarget.addEventListener("targetLost", event => {
+  vid.pause();
+});
+  </script>
 </head>
 
 <body>
@@ -16,11 +29,11 @@
         <video id="vid" src="assets/Peace_480.mp4" preload="metadata"
         response-type="arraybuffer" loop 
         crossorigin webkit-playsinline playsinline 
-        autoplay muted></video>
+        autoplay="true" muted="true"></video>
       </a-assets>
 
-      <!-- Marker -->
-      <a-entity mindar-image-target="targetIndex: 0">
+      <!-- Marker / Target -->
+      <a-entity id="img-target" mindar-image-target="targetIndex: 0">
         <!--<a-plane color="blue" opaciy="0.5" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>-->
         <a-video src="#vid" position="0 0 0" rotation="0 0 0" height="1" width="1"></a-video>
       </a-entity>
