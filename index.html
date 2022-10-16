@@ -8,38 +8,58 @@
 
   <script>
   document.addEventListener("DOMContentLoaded", function() {
+    // TARGET EVENTS
     const exampleTarget = document.querySelector('#img-target');
     var vid = document.querySelector("#vid");
-exampleTarget.addEventListener("targetFound", event => {
-  vid.play();
-});
 
-// detect target lost
-exampleTarget.addEventListener("targetLost", event => {
-  vid.pause();
-});
+    // detect target found
+    exampleTarget.addEventListener("targetFound", event => {
+      vid.play();
+    });
+
+    // detect target lost
+    exampleTarget.addEventListener("targetLost", event => {
+      vid.pause();
+    });
+
+    // BUTTON EVENTS
+    const btnUnmute = document.querySelector('#btn-unmute');
+    const btnMute = document.querySelector('#btn-mute');
+
+    btnUnmute.addEventListener('click', () => {
+      vid.muted = false;
+    });
+
+    btnMute.addEventListener('click', () => {
+      vid.muted = true;
+    });
 
   });
   </script>
 </head>
 
 <body>
-  <a-scene mindar-image="imageTargetSrc: ./targets.mind;" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
-      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
-      
-      <!-- Video Asset -->
-      <a-assets>
-        <video id="vid" src="assets/Peace_480.mp4" preload="metadata"
-        response-type="arraybuffer" loop 
-        crossorigin webkit-playsinline playsinline 
-        autoplay="true" muted="true"></video>
-      </a-assets>
+  <div style="position: absolute; z-index: 1000">
+    <button id="btn-unmute">Unmute</button>
+    <button id="btn-mute">Mute</button>
+  </div>
 
-      <!-- Marker / Target -->
-      <a-entity id="img-target" mindar-image-target="targetIndex: 0">
-        <!--<a-plane color="blue" opaciy="0.5" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>-->
-        <a-video src="#vid" position="0 0 0" rotation="0 0 0" height="1" width="1"></a-video>
-      </a-entity>
-    </a-scene>
+  <a-scene mindar-image="imageTargetSrc: ./targets.mind;" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+    <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+    
+    <!-- Video Asset -->
+    <a-assets>
+      <video id="vid" src="assets/Peace_480.mp4" preload="metadata"
+      response-type="arraybuffer" loop 
+      crossorigin webkit-playsinline playsinline 
+      autoplay="true" muted="true"></video>
+    </a-assets>
+
+    <!-- Marker / Target -->
+    <a-entity id="img-target" mindar-image-target="targetIndex: 0">
+      <!--<a-plane color="blue" opaciy="0.5" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>-->
+      <a-video src="#vid" position="0 0 0" rotation="0 0 0" height="1" width="1"></a-video>
+    </a-entity>
+  </a-scene>
 </body>
 </html>
