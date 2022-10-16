@@ -21,19 +21,40 @@
     exampleTarget.addEventListener("targetLost", event => {
       vid.pause();
     });
-
-    // VID EVENTS
-    const projectedVid = document.querySelector('#projected-vid');
-
-    projectedVid.addEventListener('click', () => {
-      vid.muted = false;
-    });
-
   });
+
+  function unmute(){
+    var vid = document.querySelector("#vid");
+    vid.muted = false;
+    $("#container").css("display","none");
+  }
   </script>
+
+  <style>
+    .container{
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      display: block;
+    }
+    .center {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      z-index: 2000;
+    }
+  </style>
+
 </head>
 
-<body>
+<body style="margin: 0; overflow: hidden; height: 100%;">
+
+  <div class="container" id="container">
+    <button id="unmute" class="center" onclick="unmute();">Unmute</button>
+  </div>
+
   <a-scene mindar-image="imageTargetSrc: ./targets.mind;" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
     <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
     
