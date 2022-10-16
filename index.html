@@ -22,47 +22,18 @@
       vid.pause();
     });
 
-    // BUTTON EVENTS
-    const btnUnmute = document.querySelector('#btn-unmute');
-    const btnMute = document.querySelector('#btn-mute');
+    // VID EVENTS
+    const projectedVid = document.querySelector('#projected-vid');
 
-    btnUnmute.addEventListener('click', () => {
+    projectedVid.addEventListener('click', () => {
       vid.muted = false;
-    });
-
-    btnMute.addEventListener('click', () => {
-      vid.muted = true;
     });
 
   });
   </script>
-
-<style>
-  .container{
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    display: block;
-  }
-  .center {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    z-index: 2000;
-  }
-</style>
 </head>
 
 <body>
-  <div class="container">
-    <div class="center">
-      <button id="btn-unmute">Unmute</button>
-      <button id="btn-mute">Mute</button>
-    </div>
-  </div>
-
   <a-scene mindar-image="imageTargetSrc: ./targets.mind;" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
     <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
     
@@ -77,7 +48,7 @@
     <!-- Marker / Target -->
     <a-entity id="img-target" mindar-image-target="targetIndex: 0">
       <!--<a-plane color="blue" opaciy="0.5" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>-->
-      <a-video src="#vid" position="0 0 0" rotation="0 0 0" height="1" width="1"></a-video>
+      <a-video id="projected-vid" src="#vid" position="0 0 0" rotation="0 0 0" height="1" width="1"></a-video>
     </a-entity>
   </a-scene>
 </body>
