@@ -63,8 +63,13 @@
     <button id="unmute" class="center" onclick="unmute();">Unmute</button>
   </div>
 
-  <a-scene mindar-image="imageTargetSrc: ./targets-2.mind;" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
-    <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+  <a-scene mindar-image="imageTargetSrc: ./targets-2.mind;" 
+  vr-mode-ui="enabled: false" 
+  device-orientation-permission-ui="enabled: false">
+    <a-camera position="0 0 0" look-controls="enabled: false" 
+    cursor="fuse: false; rayOrigin: mouse;" 
+    raycaster="far: ${customFields.libVersion}; objects: .clickable"></a-camera>
+
     
     <!-- Video Asset -->
     <a-assets>
@@ -77,7 +82,7 @@
     <!-- Marker / Target -->
     <a-entity id="img-target" mindar-image-target="targetIndex: 0">
       <!--<a-plane color="blue" opaciy="0.5" position="0 0 0" height="0.552" width="1" rotation="0 0 0"></a-plane>-->
-      <a-video id="projected-vid" src="#vid" position="0 0 0" rotation="0 0 0" height="3" width="5.34"></a-video>
+      <a-video id="projected-vid" src="#vid" position="0 0 0" rotation="0 0 0" height="3" width="5.34" class="clickable"></a-video>
     </a-entity>
   </a-scene>
 </body>
