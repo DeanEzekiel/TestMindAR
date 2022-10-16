@@ -36,12 +36,31 @@
 
   });
   </script>
+
+<style>
+  .container{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    display: block;
+  }
+  .center {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    z-index: 2000;
+  }
+</style>
 </head>
 
 <body>
-  <div style="position: absolute; z-index: 1000">
-    <button id="btn-unmute">Unmute</button>
-    <button id="btn-mute">Mute</button>
+  <div class="container">
+    <div class="center">
+      <button id="btn-unmute">Unmute</button>
+      <button id="btn-mute">Mute</button>
+    </div>
   </div>
 
   <a-scene mindar-image="imageTargetSrc: ./targets.mind;" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
