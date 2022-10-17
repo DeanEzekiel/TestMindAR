@@ -6,6 +6,8 @@
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-image-aframe.prod.js"></script>
   
+  <!-- For the icon -->
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
   <script>
   document.addEventListener("DOMContentLoaded", function() {
 
@@ -66,7 +68,10 @@
 <body style="margin: 0; overflow: hidden; height: 100%;">
 
   <div class="container" id="container">
-    <button id="unmute" class="center" onclick="unmute();">Unmute</button>
+    <button id="unmute" class="center" onclick="unmute();">
+      <!-- Button Icon -->
+      <i class='fas fa-music'></i>
+    </button>
   </div>
 
   <a-scene mindar-image="imageTargetSrc: ./targets-2.mind;" 
