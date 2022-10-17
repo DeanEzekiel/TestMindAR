@@ -39,18 +39,15 @@
   </script>
 
   <style>
-    .container{
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      bottom: 0px;
-      left: 0px;
-      display: none;
+    .container {
+      justify-content: space-between;
+      flex-direction: column;
+      height: 100vh;
+      display: flex;
     }
-    .center {
-      position: absolute;
-      top: 50%;
-      width: 100%;
+    .container .btn-holder {
+      justify-content: flex-end;
+      display: flex;
       z-index: 2000;
     }
   </style>
@@ -60,7 +57,9 @@
 <body style="margin: 0; overflow: hidden; height: 100%;">
 
   <div class="container" id="container">
-    <button id="unmute" class="center" onclick="unmute();">Unmute</button>
+    <div class="btn-holder">
+      <button id="unmute" class="center" onclick="unmute();">Unmute</button>
+    </div>
   </div>
 
   <a-scene mindar-image="imageTargetSrc: ./targets-2.mind;" 
