@@ -39,19 +39,17 @@
   </script>
 
   <style>
-    .container{
-      position: absolute;
-      top: 0px;
-      right: 0px;
-      bottom: 0px;
-      left: 0px;
-      display: none;
+    #container{
+      position: fixed;
+      bottom: -4px;
+      right: 10px;
     }
-    .center {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      z-index: 2000;
+    #unmute {
+      background-color : #31B0D5;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 4px;
+      border-color: #46b8da;
     }
   </style>
 
@@ -59,8 +57,8 @@
 
 <body style="margin: 0; overflow: hidden; height: 100%;">
 
-  <div class="container" id="container">
-    <button id="unmute" class="center" onclick="unmute();">Unmute</button>
+  <div id="container">
+    <button id="unmute" onclick="unmute();">Unmute</button>
   </div>
 
   <a-scene mindar-image="imageTargetSrc: ./targets-2.mind;" 
