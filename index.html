@@ -9,12 +9,16 @@
 
   <script>
   document.addEventListener("DOMContentLoaded", function() {
-
-    document.getElementById('container').style.display = 'block';
     // TARGET EVENTS
     const exampleTarget = document.querySelector('#img-target');
     var vid = document.querySelector("#vid");
     var projectedVid = document.querySelector("#projected-vid");
+    const sceneEl = document.querySelector('a-scene');
+    
+    // when MindAR is Ready
+    sceneEl.addEventListener("arReady", (event) => {
+      document.getElementById('container').style.display = 'block';
+    });
 
     // detect target found
     exampleTarget.addEventListener("targetFound", event => {
