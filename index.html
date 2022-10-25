@@ -51,6 +51,19 @@
     }
     
   }
+
+  async function setURL(passed_url) {
+    const response = await fetch(passed_url, {
+    method: 'HEAD'
+  })
+    .then((response) => {
+      console.log("response URL: " + response.url);
+      var video = document.getElementById('vid');      
+      video.setAttribute('src', response.url);
+    });
+  }
+
+  setURL("https://player.vimeo.com/progressive_redirect/playback/722317018/rendition/540p/file.mp4?loc=external&signature=44ba81d317018fd8897c10563de4c57e61f4d5adf1e39cd68d7a029970ce8d32");
   </script>
 
   <style>
@@ -108,7 +121,7 @@
     
     <!-- Video Asset -->
     <a-assets>
-      <video id="vid" src="https://player.vimeo.com/progressive_redirect/playback/722317018/rendition/540p/file.mp4?loc=external&signature=44ba81d317018fd8897c10563de4c57e61f4d5adf1e39cd68d7a029970ce8d32" preload="metadata"
+      <video id="vid" src="" preload="metadata"
       response-type="arraybuffer" loop 
       crossorigin webkit-playsinline playsinline 
       autoplay="false" muted="true"></video>
