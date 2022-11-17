@@ -40,14 +40,14 @@
     var vid = document.querySelector("#vid");
 
     if (vid.muted){
-    	vid.muted = false;
-    	document.getElementById('icon-unmuted').style.display = 'block';
-    	document.getElementById('icon-muted').style.display = 'none';
+      vid.muted = false;
+      document.getElementById('icon-unmuted').style.display = 'block';
+      document.getElementById('icon-muted').style.display = 'none';
     }
     else {
-    	vid.muted = true;
-    	document.getElementById('icon-unmuted').style.display = 'none';
-    	document.getElementById('icon-muted').style.display = 'block';
+      vid.muted = true;
+      document.getElementById('icon-unmuted').style.display = 'none';
+      document.getElementById('icon-muted').style.display = 'block';
     }
     
   }
@@ -63,7 +63,30 @@
     });
   }
 
-  setURL("https://player.vimeo.com/progressive_redirect/playback/763738057/rendition/1080p/file.mp4?loc=external&signature=0d877427af4e89f282a33508b126edbd7b88065368d870d90eedc3496a0ba427");
+  // 1080 VACATION
+  // setURL("https://player.vimeo.com/progressive_redirect/playback/764025496/rendition/1080p/file.mp4?loc=external&signature=1eeb5dcf010d87445f534108470c43783ef95df7f57750d30677c3e53d1de07f");
+
+  // 540 VACATION
+  // setURL("https://player.vimeo.com/progressive_redirect/playback/764025496/rendition/540p/file.mp4?loc=external&signature=aeceb262f0c37474eb6de7ee6373e0ebddcd03c31fb4e76defd721ec0326ec7a");
+
+    // 1080 SANITY
+  // setURL("https://player.vimeo.com/progressive_redirect/playback/764025461/rendition/1080p/file.mp4?loc=external&signature=dd37e6e9debd188ccddcdf98f2d87411d018d9fa379259f258fe2667ffa9c0d2");
+
+  // 540 SANITY
+  // setURL("https://player.vimeo.com/progressive_redirect/playback/764025461/rendition/540p/file.mp4?loc=external&signature=5bec3499743aef59b4255c0fbedd3936be7fb3a288a669d8e934adf9488ae4c3");
+
+    // 1080 PICK ME UP
+  // setURL("https://player.vimeo.com/progressive_redirect/playback/764025624/rendition/1080p/file.mp4?loc=external&signature=8f3faa8fa452848b74d2f61865a64b88169e6d4673ddf14c561d213cd52f8533");
+
+  // 540 PICK ME UP
+  setURL("https://player.vimeo.com/progressive_redirect/playback/764025624/rendition/540p/file.mp4?loc=external&signature=48e51a6e579a664dd0c294e6eaa9f848be66f49b1031659d485839461287b067");
+
+    // 1080 PEACE
+  // setURL("https://player.vimeo.com/progressive_redirect/playback/764025575/rendition/1080p/file.mp4?loc=external&signature=c60ce66be677049dcba06df044a48a23289c06a609cf87e3ef1ac6e94cf9ff3a");
+
+  // 540 PEACE
+  // setURL("https://player.vimeo.com/progressive_redirect/playback/764025575/rendition/540p/file.mp4?loc=external&signature=c8d31f7bc4b2cd8f88bfd68df8f95bcfd58bc4edef4c9981f72861cf160a655c");
+  </script>
   </script>
 
   <style>
@@ -106,12 +129,12 @@
       </svg>
 
       <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-volume-mute" id="icon-muted" viewBox="0 0 16 16">
-		<path d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06zM6 5.04 4.312 6.39A.5.5 0 0 1 4 6.5H2v3h2a.5.5 0 0 1 .312.11L6 10.96V5.04zm7.854.606a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0z"/>
-	  </svg>
+    <path d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06zM6 5.04 4.312 6.39A.5.5 0 0 1 4 6.5H2v3h2a.5.5 0 0 1 .312.11L6 10.96V5.04zm7.854.606a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0z"/>
+    </svg>
     </button>
   </div>
 
-  <a-scene mindar-image="imageTargetSrc: ./target-pickmeup.mind; filterMinCF:0.0001; filterBeta: 0.001;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" 
+  <a-scene mindar-image="imageTargetSrc: ./target-pickup.mind; filterMinCF:0.0001; filterBeta: 0.001;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" 
   vr-mode-ui="enabled: false" 
   device-orientation-permission-ui="enabled: false">
     <a-camera position="0 0 0" look-controls="enabled: false" 
@@ -124,7 +147,7 @@
       <video id="vid" src="" preload="metadata"
       response-type="arraybuffer"  
       crossorigin webkit-playsinline playsinline 
-      autoplay="false" muted="true"></video>
+      autoplay="false" muted="true" loop="true"></video>
     </a-assets>
 
     <!-- Marker / Target -->
