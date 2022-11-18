@@ -20,6 +20,11 @@
       document.getElementById('container').style.display = 'block';
     });
 
+    //when MindAR has an error
+    sceneEl.addEventListener("arError", (event) => {
+      console.log("MindAR failed to start");
+    });
+
     // detect target found
     exampleTarget.addEventListener("targetFound", event => {
       vid.play();
@@ -63,7 +68,12 @@
     });
   }
 
-  setURL("https://player.vimeo.com/progressive_redirect/playback/763738057/rendition/1080p/file.mp4?loc=external&signature=0d877427af4e89f282a33508b126edbd7b88065368d870d90eedc3496a0ba427");
+  // setURL("https://player.vimeo.com/progressive_redirect/playback/763738057/rendition/1080p/file.mp4?loc=external&signature=0d877427af4e89f282a33508b126edbd7b88065368d870d90eedc3496a0ba427");
+  // 1080 PICK ME UP
+  // setURL("https://player.vimeo.com/progressive_redirect/playback/764025624/rendition/1080p/file.mp4?loc=external&signature=8f3faa8fa452848b74d2f61865a64b88169e6d4673ddf14c561d213cd52f8533");
+
+  // 540 PICK ME UP
+  setURL("https://player.vimeo.com/progressive_redirect/playback/764025624/rendition/540p/file.mp4?loc=external&signature=48e51a6e579a664dd0c294e6eaa9f848be66f49b1031659d485839461287b067");
   </script>
 
   <style>
