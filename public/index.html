@@ -57,13 +57,13 @@
     
   }
 
-  async function setURL(passed_vidID, passed_url) {
+  async function setURL(passed_url) {
     const response = await fetch(passed_url, {
     method: 'HEAD'
   })
     .then((response) => {
       console.log("response URL: " + response.url);
-      var video = document.getElementById('passed_vidID');      
+      var video = document.getElementById('vid');      
       video.setAttribute('src', response.url);
     });
   }
@@ -72,17 +72,8 @@
   // 1080 PICK ME UP
   // setURL("https://player.vimeo.com/progressive_redirect/playback/764025624/rendition/1080p/file.mp4?loc=external&signature=8f3faa8fa452848b74d2f61865a64b88169e6d4673ddf14c561d213cd52f8533");
 
-  // Vid 1 540 PICK ME UP
-  setURL("vid", "https://player.vimeo.com/progressive_redirect/playback/764025624/rendition/540p/file.mp4?loc=external&signature=48e51a6e579a664dd0c294e6eaa9f848be66f49b1031659d485839461287b067");
-
-  // Vid 2 540 PEACE
-  setURL("vid1", "https://player.vimeo.com/progressive_redirect/playback/764025575/rendition/540p/file.mp4?loc=external&signature=c8d31f7bc4b2cd8f88bfd68df8f95bcfd58bc4edef4c9981f72861cf160a655c");
-
-  // Vid 3 540 VACATION
-  setURL("vid2", "https://player.vimeo.com/progressive_redirect/playback/764025496/rendition/540p/file.mp4?loc=external&signature=aeceb262f0c37474eb6de7ee6373e0ebddcd03c31fb4e76defd721ec0326ec7a");
-
-  // Vid 4 540 SANITY
-  setURL("vid3", "https://player.vimeo.com/progressive_redirect/playback/764025461/rendition/540p/file.mp4?loc=external&signature=5bec3499743aef59b4255c0fbedd3936be7fb3a288a669d8e934adf9488ae4c3");
+  // 540 PICK ME UP
+  setURL("https://player.vimeo.com/progressive_redirect/playback/764025624/rendition/540p/file.mp4?loc=external&signature=48e51a6e579a664dd0c294e6eaa9f848be66f49b1031659d485839461287b067");
 
   // setURL("https://drive.google.com/file/d/1qUx7lrqbbS6gmIjkxWrE6cXY66ZOuPNz/preview");
   </script>
@@ -132,7 +123,7 @@
     </button>
   </div>
 
-  <a-scene mindar-image="imageTargetSrc: ./targets-all.mind; filterMinCF:0.0001; filterBeta: 0.001;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" 
+  <a-scene mindar-image="imageTargetSrc: ./target-pickmeup.mind; filterMinCF:0.0001; filterBeta: 0.001;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" 
   vr-mode-ui="enabled: false" 
   device-orientation-permission-ui="enabled: false">
     <a-camera position="0 0 0" look-controls="enabled: false" 
@@ -140,24 +131,9 @@
     raycaster="far: ${customFields.libVersion}; objects: .clickable"></a-camera>
 
     
-    <!-- Video Assets -->
+    <!-- Video Asset -->
     <a-assets>
       <video id="vid" src="https://www.googleapis.com/drive/v3/files/1qUx7lrqbbS6gmIjkxWrE6cXY66ZOuPNz?key=AIzaSyAnkJ28rOTftYKh-oJhVYamEz4YNYByn2E&alt=media" preload="metadata"
-      response-type="arraybuffer"  
-      crossorigin webkit-playsinline playsinline 
-      autoplay="false" muted="true" loop="true"></video>
-
-      <video id="vid1" src="https://www.googleapis.com/drive/v3/files/1qUx7lrqbbS6gmIjkxWrE6cXY66ZOuPNz?key=AIzaSyAnkJ28rOTftYKh-oJhVYamEz4YNYByn2E&alt=media" preload="metadata"
-      response-type="arraybuffer"  
-      crossorigin webkit-playsinline playsinline 
-      autoplay="false" muted="true" loop="true"></video>
-
-      <video id="vid2" src="https://www.googleapis.com/drive/v3/files/1qUx7lrqbbS6gmIjkxWrE6cXY66ZOuPNz?key=AIzaSyAnkJ28rOTftYKh-oJhVYamEz4YNYByn2E&alt=media" preload="metadata"
-      response-type="arraybuffer"  
-      crossorigin webkit-playsinline playsinline 
-      autoplay="false" muted="true" loop="true"></video>
-
-      <video id="vid3" src="https://www.googleapis.com/drive/v3/files/1qUx7lrqbbS6gmIjkxWrE6cXY66ZOuPNz?key=AIzaSyAnkJ28rOTftYKh-oJhVYamEz4YNYByn2E&alt=media" preload="metadata"
       response-type="arraybuffer"  
       crossorigin webkit-playsinline playsinline 
       autoplay="false" muted="true" loop="true"></video>
@@ -167,16 +143,6 @@
     <a-entity id="img-target" mindar-image-target="targetIndex: 0">
       <a-video id="projected-vid" src="#vid" position="0 0 0" rotation="0 0 0" height="1" width="1" class="clickable"></a-video>
     </a-entity>
-    <a-entity id="img-target" mindar-image-target="targetIndex: 1">
-      <a-video id="projected-vid1" src="#vid1" position="0 0 0" rotation="0 0 0" height="1" width="1" class="clickable"></a-video>
-    </a-entity>
-    <a-entity id="img-target" mindar-image-target="targetIndex: 2">
-      <a-video id="projected-vid2" src="#vid2" position="0 0 0" rotation="0 0 0" height="1" width="1" class="clickable"></a-video>
-    </a-entity>
-    <a-entity id="img-target" mindar-image-target="targetIndex: 3">
-      <a-video id="projected-vid3" src="#vid3" position="0 0 0" rotation="0 0 0" height="1" width="1" class="clickable"></a-video>
-    </a-entity>
-
   </a-scene>
 </body>
 </html>
